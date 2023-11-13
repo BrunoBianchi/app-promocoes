@@ -1,124 +1,131 @@
 <app-navbar></app-navbar>
 
 <div class="container mx-auto">
-  <div class="adicionar-promo">
-    <form [formGroup]="addForm" (ngSubmit)="addPromo()">
-      <h2>Adicionar Promoção</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <label for="inputPassword5" class="form-label">Nome</label>
-          <input
-            type="text"
-            formControlName="name"
-            id="inputPassword5"
-            class="form-control"
-            aria-describedby="passwordHelpBlock"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword5" class="form-label">Descrição</label>
-          <input
-            formControlName="description"
-            type="text"
-            id="inputPassword5"
-            class="form-control"
-            aria-describedby="passwordHelpBlock"
-          />
-        </div>
-      </div>
-      <div class="row" style="margin-top: 20px">
-        <div class="col-md-4" style="margin-top: 33px">
-          <select class="select" formControlName="option">
-            <option value="">Categoria</option>
-            <option value="alimentos">Alimentos</option>
-            <option value="eletronicos">Eletrônicos</option>
-            <option value="decoracoes">Decorações</option>
-            <option value="roupas">Roupas</option>
-            <option value="viagens">Viagens</option>
-            <option value="saude">Saúde</option>
-            <option value="infantil">Infantil</option>
-          </select>
-        </div>
-        <div class="col-md-4" style="margin-top: 33px">
-          <input formControlName="date" type="date" class="form-control" />
-        </div>
-        <div class="col-md-4">
-          <label for="inputPassword5" class="form-label">Link da Promo</label>
-          <input
-            formControlName="url"
-            type="texte"
-            id="inputPassword5"
-            class="form-control"
-            aria-describedby="passwordHelpBlock"
-          />
-        </div>
-      </div>
-      <div class="alert  danger" role="alert" *ngIf="errorMsg">
-        {{ errorMsg }}
-      </div>
-      <div class="alert success" role="alert" *ngIf="successMsg">
-        {{successMsg}}
-      </div>
-      <button
-        [disabled]="!addForm.valid"
-        class="btn-add-promo mx-auto"
-        type="submit"
-      >
-        Adicionar Promoção
-      </button>
-    </form>
-  </div>
-  <div class="promocoes-ativas">
-    <h2>Promocoes Ativas:</h2>
-    <div class="search">
-      <form>
-        <input
-          type="text"
-          placeholder="Buscar Promoção..."
-          #input
-          (keyup)="search(input.value)"
-        />
-        <img src="assets/search.svg" alt="Buscar Promoção..." />
-      </form>
-    </div>
-    <ul>
-      <li
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapseWidthExample"
-        aria-expanded="false"
-        aria-controls="collapseWidthExample"
-      >
-        <a><i class="fa-solid fa-square-caret-down"></i> </a>
-        <a> Nome</a>
-        <a class="delete"><i class="fa-solid fa-delete-left"></i></a>
-        <div class="collapse" id="collapseWidthExample">
-          <hr />
+  <div class="row">
+    <div class="col-md-6">
+      <div class="adicionar-promo">
+        <form [formGroup]="addForm" (ngSubmit)="addPromo()">
+          <h2>Adicionar Promoção</h2>
           <div class="row">
-            <div class="promo-edit-body col-md-10">
-              <p class="promo-edit-description">asdasdsadasdasdsa</p>
-              <div class="promo-edit-info">
-                <div class="row">
-                  <div class="col-md-4">
-                    <a><i class="fa-solid fa-calendar-days"></i> 23/12/2023</a>
+            <div class="col-md-6" style="margin-top:20px;">
+              <label for="inputPassword5" class="form-label">Nome</label>
+              <input
+                type="text"
+                formControlName="name"
+                id="inputPassword5"
+                class="form-control"
+                aria-describedby="passwordHelpBlock"
+              />
+            </div>
+            <div class="col-md-6" style="margin-top:20px;">
+              <label for="inputPassword5" class="form-label">Descrição</label>
+              <input
+                formControlName="description"
+                type="text"
+                id="inputPassword5"
+                class="form-control"
+                aria-describedby="passwordHelpBlock"
+              />
+            </div>
+          </div>
+          <div class="row" style="margin-top: 40px">
+            <div class="col-md-4" style="margin-top: 33px">
+              <select class="select" formControlName="option">
+                <option value="">Categoria</option>
+                <option value="alimentos">Alimentos</option>
+                <option value="eletronicos">Eletrônicos</option>
+                <option value="decoracoes">Decorações</option>
+                <option value="roupas">Roupas</option>
+                <option value="viagens">Viagens</option>
+                <option value="saude">Saúde</option>
+                <option value="infantil">Infantil</option>
+              </select>
+            </div>
+            <div class="col-md-4" style="margin-top: 33px">
+              <input formControlName="date" type="date" class="form-control" />
+            </div>
+            <div class="col-md-4">
+              <label for="inputPassword5" class="form-label">Link da Promo</label>
+              <input
+                formControlName="url"
+                type="texte"
+                id="inputPassword5"
+                class="form-control"
+                aria-describedby="passwordHelpBlock"
+              />
+            </div>
+          </div>
+          <div class="alert  danger" role="alert" *ngIf="errorMsg">
+            {{ errorMsg }}
+          </div>
+          <div class="alert success" role="alert" *ngIf="successMsg">
+            {{successMsg}}
+          </div>
+          <button
+            [disabled]="!addForm.valid"
+            class="btn-add-promo mx-auto"
+            type="submit"
+          >
+            Adicionar Promoção
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="promocoes-ativas">
+        <h2>Promocoes Ativas:</h2>
+        <div class="search">
+          <form>
+            <input
+              type="text"
+              placeholder="Buscar Promoção..."
+              #input
+              (keyup)="search(input.value)"
+            />
+            <img src="assets/search.svg" alt="Buscar Promoção..." />
+          </form>
+        </div>
+        <ul>
+          <li *ngFor="let promo of promoList;index as i" 
+          type="button"
+           data-bs-toggle="collapse"
+           attr.data-bs-target="#promo-{{i}}"
+            aria-expanded="false"
+            attr.aria-controls="{{i}}"
+          >
+            <a> {{promo.name}}</a>
+            <a class="delete"><i class="fa-solid fa-delete-left"></i></a>
+            <div class="collapse" id="promo-{{i}}">
+              <hr />
+              <div class="row">
+                <div class="promo-edit-body col-md-10">
+                  <p class="promo-edit-description">{{promo.description}}</p>
+                  <div class="promo-edit-info">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <a><i class="fa-solid fa-calendar-days"></i> {{promo.date}}</a>
+                      </div>
+                      <div class="col-md-4">
+                        <a><i class="fa-solid fa-clipboard-list"></i> {{promo.option}}</a>
+                      </div>
+                      <div class="col-md-2">
+                        <a><i class="fa-solid fa-wifi"></i></a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-md-4">
-                    <a><i class="fa-solid fa-clipboard-list"></i> Caterogia</a>
-                  </div>
-                  <div class="col-md-4">
-                    <a><i class="fa-solid fa-wifi"></i> LINK</a>
-                  </div>
+                </div>
+                <div class="col-md-2">
+                  <a style="float: right"
+                    ><i class="fa-solid fa-pen-to-square"></i
+                  ></a>
                 </div>
               </div>
             </div>
-            <div class="col-md-2">
-              <a style="float: right"
-                ><i class="fa-solid fa-pen-to-square"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
+
+
 </div>
