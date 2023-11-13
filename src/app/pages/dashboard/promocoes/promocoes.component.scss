@@ -2,13 +2,92 @@
     .container {
         width:50%;
         margin-top:100px;
-        background: rgb(30, 38, 60);
+        
         border-radius:5px;
         h2{
             text-align: center;
             margin-bottom:30px;
         }
+        .adicionar-promo {
+            padding:10px;
+            background: rgb(30, 38, 60);
+            margin-bottom:50px;
+            color:white;
+            border-radius:5px;
+            .select {
+                background-color: rgba(255,255,255,0.15);
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                outline: none;
+                text-align: center;
+                height:40px;
+                width:100%;
+                border-radius:7px;
+
+            }
+            select {
+                color:white;
+            }
+            option{
+                color:black;
+                background-color: rgba(255,255,255,0.15);
+            }
+            .btn-add-promo {
+                outline:none;
+                background: rgba(92, 97, 122, 0.194);
+                border:none;
+                color:white;
+                padding:10px;
+                border-radius:5px;
+                justify-content: center;
+                text-align: center;
+                margin-top:20px;
+                width:100%;
+                &:hover {
+                    background: rgba(55, 60, 83, 0.194);
+                }
+            }
+            .danger {
+                margin-top:20px;
+                margin-bottom:10px;
+                background-color: #c05b5b;
+                border:none;
+                color:white;
+                text-align: center;
+            }
+            .success{
+                margin-top:20px;
+                margin-bottom:10px;
+                background-color: #6cc05b;
+                border:none;
+                color:white;
+                text-align: center;           
+            }
+        }
+        .search {
+            margin-left:30px;
+            form {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: rgba(255,255,255,0.15);
+
+                border-radius:5px;
+                padding:10px;
+                margin-bottom:20px;
+                input {
+                    width:95%;
+                    background: none;
+                    border: none;
+                    font-size: rem-calc(18);
+                    color:var(--branco);
+                }
+                input::placeholder {
+                    color:var(--branco);
+                }
+            }
+        }
         .promocoes-ativas{
+            background: rgb(30, 38, 60);
             padding:10px;
             color:white;
             ul {
