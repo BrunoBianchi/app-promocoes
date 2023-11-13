@@ -1,0 +1,26 @@
+:host {
+    .container {
+        margin-top:100px;
+        h1 {
+            color:white;
+            text-align: center;
+            margin-bottom:20px;
+        }
+    }
+    .chart-container {
+        background: rgb(30, 38, 60);
+        padding:10px;
+        border-radius:5px;
+        color:white;
+        h2 {
+            text-align: center;
+            margin-bottom:10px;
+            font-size: 25px;
+        }
+    }
+    .charts {
+        padding:20px;
+        background: rgb(33, 41, 65) ;
+        border-radius:5px;
+    }
+}

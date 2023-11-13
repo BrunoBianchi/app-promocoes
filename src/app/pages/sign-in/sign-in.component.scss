@@ -1,0 +1,68 @@
+:host {
+    color:white;
+}
+form {
+    justify-content: center;
+    padding:10px;
+    margin:0 auto;
+    
+}
+.card {
+    box-shadow: -2px 4px 30px -3px rgba(0,0,0,0.42);
+-webkit-box-shadow: -2px 4px 30px -3px rgba(0,0,0,0.42);
+-moz-box-shadow: -2px 4px 30px -3px rgba(0,0,0,0.42);
+}
+
+.submit {
+    margin-top:10px;
+    background-color: 	#7572da;
+    color: white;
+    border-radius: 5px;;
+    font-weight:600;
+}
+.submit:hover {
+    background-color: 	#6460c1;
+
+}
+.google {
+    text-align: center;
+    justify-content: center;
+    color:#da7272;
+    width:100%;
+}
+.alert-danger {
+    color:white;
+    background-color:#da7272e4 ;
+    text-align: center;
+    font-weight: 600;
+}
+.card-title {
+    font-weight: 600;
+}
+input{
+    background: transparent;
+    color:black;
+    border:none;
+    border-bottom: 2px solid black;
+    border-radius:0px;
+    outline:none;
+    margin-bottom:10px;
+}
+input:focus  {
+    outline: none;
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: 2px solid black;
+}
+ul {
+    list-style-type: none;
+}
+li a {
+    font-size:15px;
+    text-decoration: none;
+    color:#7282da;
+    font-weight: 400;
+}
+li a:hover {
+    color: 	#6460c1;
+}
