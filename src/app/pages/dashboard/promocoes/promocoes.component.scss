@@ -1,0 +1,50 @@
+:host {
+    .container {
+        width:50%;
+        margin-top:100px;
+        background: rgb(30, 38, 60);
+        border-radius:5px;
+        h2{
+            text-align: center;
+            margin-bottom:30px;
+        }
+        .promocoes-ativas{
+            padding:10px;
+            color:white;
+            ul {
+                list-style-type: none;
+                li {
+                    margin-bottom:10px;
+                    padding:6px;
+                    border-radius:5px;
+                    background: rgb(37, 45, 69);
+                }
+            }
+            .delete {
+                font-size:17px;
+                float:right;
+                color:#da7272;
+                &:hover {
+                    color:#a44f4f;
+                    cursor:pointer;
+                }
+            }
+            .collapse {
+                padding:20px;
+                .promo-edit-body{
+                   word-break: break-all;
+                   .promo-edit-info  {
+                    width:100%;
+                   }
+                   .promo-edit-description{
+                    overflow-x:auto;
+                    background: rgba(26, 34, 56, 0.443);
+                    padding:10px;
+                    border-radius:5px;
+                    max-height:200px;
+                   }
+                }
+            }
+        }
+    }
+}

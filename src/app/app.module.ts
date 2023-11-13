@@ -17,6 +17,7 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './pages/dashboard/dashboard/dashboard.component';
 import { EstatisticasComponent } from './pages/dashboard/estatisticas/estatisticas.component';
+import { PromocoesComponent } from './pages/dashboard/promocoes/promocoes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { EstatisticasComponent } from './pages/dashboard/estatisticas/estatistic
     SignInComponent,
     DashboardComponent,
     EstatisticasComponent,
+    PromocoesComponent,
   ],
   imports: [
     BrowserModule,
