@@ -1,20 +1,6 @@
 :host {
     .container {
-        width:100%;
-        margin-top:100px;
-        
-        border-radius:5px;
-        h2{
-            text-align: center;
-            margin-bottom:30px;
-        }
-        .adicionar-promo {
-            padding:10px;
-            background: rgb(30, 38, 60);
-            margin-bottom:70px;
-            color:white;
-            border-radius:5px;
-            .select {
+                    .select {
                 background-color: rgba(255,255,255,0.15);
                 border: 1px solid rgba(0, 0, 0, 0.15);
                 outline: none;
@@ -23,13 +9,6 @@
                 width:100%;
                 border-radius:7px;
 
-            }
-            select {
-                color:white;
-            }
-            option{
-                color:black;
-                background-color: rgba(255,255,255,0.15);
             }
             .btn-add-promo {
                 outline:none;
@@ -46,6 +25,28 @@
                     background: rgba(55, 60, 83, 0.194);
                 }
             }
+        width:100%;
+        margin-top:100px;
+        
+        border-radius:5px;
+        h2{
+            text-align: center;
+            margin-bottom:30px;
+        }
+        .adicionar-promo {
+            padding:10px;
+            background: rgb(30, 38, 60);
+            margin-bottom:70px;
+            color:white;
+            border-radius:5px;
+            select {
+                color:white;
+            }
+            option{
+                color:black;
+                background-color: rgba(255,255,255,0.15);
+            }
+
             .danger {
                 margin-top:20px;
                 margin-bottom:10px;
@@ -111,6 +112,10 @@
                     cursor:pointer;
                 }
             }
+            .name {
+                text-decoration: none;
+                color:white;
+               }
             .collapse {
                 padding:20px;
                 .promo-edit-body{
@@ -126,6 +131,9 @@
                     max-height:200px;
                    }
                 }
+                .edit:hover {
+                    color:#72da8e;
+                   }
             }
         }
     }

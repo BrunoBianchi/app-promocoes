@@ -86,37 +86,62 @@
           </form>
         </div>
         <ul>
-          <li *ngFor="let promo of promoList;index as i" 
-          type="button"
-           data-bs-toggle="collapse"
-           attr.data-bs-target="#promo-{{i}}"
-            aria-expanded="false"
-            attr.aria-controls="{{i}}"
-          >
-            <a> {{promo.name}}</a>
-            <a class="delete"><i class="fa-solid fa-delete-left"></i></a>
+          <li *ngFor="let promo of promoList;index as i" >
+            <a  type="button"
+            data-bs-toggle="collapse"
+            attr.data-bs-target="#promo-{{i}}"
+             aria-expanded="false"
+             attr.aria-controls="{{i}}" class="name"> {{promo.name}}</a>
+            <a class="delete" (click)="removePromo(promo.uid)"><i class="fa-solid fa-delete-left"></i></a>
             <div class="collapse" id="promo-{{i}}">
               <hr />
               <div class="row">
                 <div class="promo-edit-body col-md-10">
-                  <p class="promo-edit-description">{{promo.description}}</p>
-                  <div class="promo-edit-info">
+                  <form *ngIf="editBool" [formGroup]="editForm" (ngSubmit)="editPromo(promo.uid)">
+                    <input formControlName="description" type="text" value="{{promo.description}}" class="form-control">
+      
+                   <br>
+                    <div class="promo-edit-info">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <input formControlName="date" type="date" value="{{promo.date}}" class="form-control">
+
+                        </div>
+                        <div class="col-md-6">
+                            <select class="select" formControlName="option">
+                              <option value="">Categoria</option>
+                              <option value="alimentos">Alimentos</option>
+                              <option value="eletronicos">Eletrônicos</option>
+                              <option value="decoracoes">Decorações</option>
+                              <option value="roupas">Roupas</option>
+                              <option value="viagens">Viagens</option>
+                              <option value="saude">Saúde</option>
+                              <option value="infantil">Infantil</option>
+                            </select>
+                          </div>
+                      </div>
+                    </div>             
+                    <br>
+                    <button class="btn-add-promo" type="submit">Editar Promoção</button>
+                  </form>
+                  <p class="promo-edit-description" *ngIf="!editBool">
+                    {{promo.description}}
+                  </p>
+                 
+                  <div class="promo-edit-info" *ngIf="!editBool">
                     <div class="row">
-                      <div class="col-md-5">
+                      <div class="col-md-6">
                         <a><i class="fa-solid fa-calendar-days"></i> {{promo.date}}</a>
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-6">
                         <a><i class="fa-solid fa-clipboard-list"></i> {{promo.option}}</a>
-                      </div>
-                      <div class="col-md-2">
-                        <a><i class="fa-solid fa-wifi"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-2">
                   <a style="float: right"
-                    ><i class="fa-solid fa-pen-to-square"></i
+                    ><i class="fa-solid fa-pen-to-square edit" (click)="enableEdit(promo.uid)"></i
                   ></a>
                 </div>
               </div>

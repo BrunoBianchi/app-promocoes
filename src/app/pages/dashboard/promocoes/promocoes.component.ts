@@ -10,8 +10,9 @@ import { PromoService } from 'src/app/shared/services/promos/crude.service';
 })
 export class PromocoesComponent implements OnInit {
   public errorMsg!: string;
+  public editBool:boolean = false;
   public successMsg!: string;
-  public promoList: Array<{name:string,date:string,url:string,option:string,description:string}> = [];
+  public promoList: Array<{name:string,date:string,url:string,option:string,description:string,uid:string}> = [];
   public addForm: FormGroup = this.formbuilder.group({
     name: ['', [Validators.required]],
     description: ['', [Validators.required]],
@@ -19,10 +20,17 @@ export class PromocoesComponent implements OnInit {
     date: ['', [Validators.required]],
     url: ['', [Validators.required]],
   });
+  public editForm: FormGroup = this.formbuilder.group({
+    name: ['', [Validators.required]],
+    description: ['', [Validators.required]],
+    option: ['', [Validators.required]],
+    date: ['', [Validators.required]],
+  });
   ngOnInit(): void {
      this.crude.Promocoes.subscribe((promos) => { 
       promos.forEach(promo=>{
         this.promoList.push({
+          uid:promo.id,
           name: promo.get('name'),
           date: promo.get('date'),
           url:promo.get('url'),
@@ -51,5 +59,31 @@ export class PromocoesComponent implements OnInit {
       .catch((err) => {
         this.errorMsg = err.message;
       });
+  }
+  public removePromo(id:string) {
+    this.crude.removePromo(id).then((res)=>{ 
+      this.promoList = this.promoList.filter((promo)=>{return promo.uid !== id})
+    }).catch((err)=>{ 
+      console.log(err);
+    })
+  }
+  public enableEdit(id:string) {
+    this.editBool = true;
+    let promo = this.promoList.find((promo)=>{return promo.uid === id});
+    this.editForm.setValue({
+      name: promo?.name,
+      description: promo?.description,
+      option: promo?.option,
+      date: promo?.date,
+    });
+  }
+  public editPromo(id:string) {
+
+    this.crude.edtiPromo(id,this.editForm.value).then((res)=>{ 
+      this.editBool = false;
+      this.promoList[ this.promoList.findIndex((promo)=>{return promo.uid ==id})] = this.editForm.value;
+    }).catch(err=>{
+      console.log(err);
+    })
   }
 }

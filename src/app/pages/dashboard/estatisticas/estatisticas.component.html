@@ -3,16 +3,19 @@
     <h1>Estatisticas</h1>
     <div class="row">
         <div class="col-md-6">
-            <div class="chart-container">
-                <h2>Nome</h2>
-                <canvas  id="MyChart" >{{ chart }}</canvas>
+            <div class="chart-container" >
+                <h2>Categorias</h2>
+                <canvas  id="MyChart2" >{{ chart2 }}</canvas>
+                <p style="text-align: center;"  *ngIf="loadingMsg">{{loadingMsg}}</p>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="chart-container">
-                <h2>Nome</h2>
-                <canvas  id="MyChart1" >{{ chart1 }}</canvas>
+            <div class="chart-container" >
+                <h2>Categorias</h2>
+                <canvas  id="MyChart1" >{{ chart }}</canvas>
+                <p style="text-align: center;"  *ngIf="loadingMsg">{{loadingMsg}}</p>
             </div>
+            
         </div>
     </div>
 </div>
