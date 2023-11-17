@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "138190328647",
+    "project_id": "promocoes-30f45",
+    "storage_bucket": "promocoes-30f45.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138190328647:android:4d0017b34a71d2fc6fb262",
+        "android_client_info": {
+          "package_name": "com.asimov.promocoes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRoyH8o5GFDbg0maVUhquhRM7pHyrai4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
