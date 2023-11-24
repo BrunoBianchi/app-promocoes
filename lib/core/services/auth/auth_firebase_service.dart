@@ -1,10 +1,10 @@
-import 'dart:io';
+//import 'dart:io';
 import 'dart:async';
 import 'package:promocoes/core/models/promo_user.dart';
 import 'package:promocoes/core/services/auth/auth_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+//import 'package:firebase_storage/firebase_storage.dart';
 
 class AuthFirebaseService implements AuthService {
   static PromoUser? _currentUser;
@@ -66,14 +66,14 @@ class AuthFirebaseService implements AuthService {
     FirebaseAuth.instance.signOut();
   }
 
-  Future<String?> _uploadUserImage(File? image, String imageName) async {
+  /*Future<String?> _uploadUserImage(File? image, String imageName) async {
     if (image == null) return null;
 
     final storage = FirebaseStorage.instance;
     final imageRef = storage.ref().child('user_images').child(imageName);
     await imageRef.putFile(image).whenComplete(() {});
     return await imageRef.getDownloadURL();
-  }
+  }*/
 
   Future<void> _savepromocoesUser(PromoUser user) async {
     final store = FirebaseFirestore.instance;
@@ -86,7 +86,7 @@ class AuthFirebaseService implements AuthService {
     });
   }
 
-  static PromoUser _topromocoesUser(User user, [String? imageUrl]) {
+  static PromoUser _topromocoesUser(User user) {
     return PromoUser(
       id: user.uid,
       name: user.displayName ?? user.email!.split('@')[0],

@@ -27,6 +27,7 @@ class AuthOrAppPage extends StatelessWidget {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const LoadingPage();
               } else {
+                // ignore: prefer_const_constructors
                 return snapshot.hasData ? ChatPage() : const AuthPage();
                 //return snapshot.hasData ? const AuthPage() : HomePage();
               }

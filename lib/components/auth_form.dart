@@ -1,5 +1,5 @@
-import 'dart:io';
-import 'package:promocoes/components/user_image_picker.dart';
+//import 'dart:io';
+//import 'package:promocoes/components/user_image_picker.dart';
 import 'package:promocoes/core/models/auth_form_data.dart';
 import 'package:flutter/material.dart';
 
@@ -23,6 +23,7 @@ class _AuthFormState extends State<AuthForm> {
   //  _formData.image = image;
   //}
 
+  // ignore: unused_element
   void _showError(String msg) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -55,10 +56,6 @@ class _AuthFormState extends State<AuthForm> {
           child: Column(
             children: [
               if (_formData.isSignup)
-              //  UserImagePicker(
-              //    onImagePick: _handleImagePick,
-              //  ),
-              //if (_formData.isSignup)
                 TextFormField(
                   key: const ValueKey('name'),
                   initialValue: _formData.name,

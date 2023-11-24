@@ -1,11 +1,13 @@
 class Produto {
-  final String nome;
-  final int quantidade;
-  final double valor;
+  final String name;
+  final String description;
+  final String option;
+  final String url;
 
   Produto(
-    this.nome,
-    this.quantidade,
-    this.valor,
+    this.name,
+    this.description,
+    this.option,
+    this.url,
   );
 }

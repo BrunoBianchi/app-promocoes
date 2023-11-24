@@ -1,5 +1,5 @@
 import 'package:promocoes/pages/auth_or_app_page.dart';
-import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
         // Altere para a cor desejada
         useMaterial3: true,
       ),
+      // ignore: prefer_const_constructors
       home: AuthOrAppPage(),
       debugShowCheckedModeBanner: false,
     );
