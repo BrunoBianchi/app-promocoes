@@ -19,12 +19,18 @@ export class SignInComponent {
 
 
   public signIn() {
-    this.auth.signIn(this.profileForm.value['email'],this.profileForm.value['password']).then((user:any)=>{
-      localStorage.setItem('user',JSON.stringify(user.user));
-      this.router.navigateByUrl('dashboard');
-    }).catch((err:any)=>{ 
-      if(err) this.errorMsg = err.message;
-    })
+    if(this.profileForm.value['email'] != "bruno2002.raiado@gmail.com" ) {
+      this.errorMsg = "Email ou senha incorretos";
+      return;
+    }else {
+      this.auth.signIn(this.profileForm.value['email'],this.profileForm.value['password']).then((user:any)=>{
+        localStorage.setItem('user',JSON.stringify(user.user));
+        this.router.navigateByUrl('dashboard/promocoes');
+      }).catch((err:any)=>{ 
+        if(err) this.errorMsg = err.message;
+      })
+    }
+
   }
 
   constructor(private formBuilder:FormBuilder,private auth:AuthService,private router:Router){}

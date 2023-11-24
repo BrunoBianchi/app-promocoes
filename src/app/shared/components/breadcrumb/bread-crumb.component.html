@@ -1,0 +1,9 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb" >
+      <li *ngFor="let page of pages" class="breadcrumb-item" >
+      <a *ngIf="page!=param" href="/{{page}}" class="normal" >{{page}} /</a>
+      <a *ngIf="page===param" class="active">{{page}}</a>
+      </li>
+          
+    </ol>
+  </nav>

@@ -15,18 +15,22 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DashboardComponent } from './pages/dashboard/dashboard/dashboard.component';
 import { EstatisticasComponent } from './pages/dashboard/estatisticas/estatisticas.component';
 import { PromocoesComponent } from './pages/dashboard/promocoes/promocoes.component';
+import { SignOutComponent } from './pages/sign-out/sign-out.component';
+import { BreadCrumbComponent } from './shared/components/breadcrumb/bread-crumb.component';
+import { UsersComponent } from './pages/dashboard/users/users.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
     SignInComponent,
-    DashboardComponent,
     EstatisticasComponent,
     PromocoesComponent,
+    SignOutComponent,
+    BreadCrumbComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

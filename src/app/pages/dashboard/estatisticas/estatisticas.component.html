@@ -1,18 +1,20 @@
 <app-navbar></app-navbar>
+
 <div class="container charts">
+    <app-bread-crumb></app-bread-crumb>
     <h1>Estatisticas</h1>
     <div class="row">
         <div class="col-md-6">
             <div class="chart-container" >
-                <h2>Categorias</h2>
-                <canvas  id="MyChart2" >{{ chart2 }}</canvas>
+                <h2>Usuários</h2>
+                <canvas  id="usuarios" >{{ usuarios }}</canvas>
                 <p style="text-align: center;"  *ngIf="loadingMsg">{{loadingMsg}}</p>
             </div>
         </div>
         <div class="col-md-6">
             <div class="chart-container" >
                 <h2>Categorias</h2>
-                <canvas  id="MyChart1" >{{ chart }}</canvas>
+                <canvas  id="categorias" >{{ categoriaas }}</canvas>
                 <p style="text-align: center;"  *ngIf="loadingMsg">{{loadingMsg}}</p>
             </div>
             

@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="container mx-auto">
+<app-bread-crumb></app-bread-crumb>
   <div class="row">
     <div class="col-md-6">
       <div class="adicionar-promo">
@@ -86,7 +87,9 @@
           </form>
         </div>
         <ul>
-          <li *ngFor="let promo of promoList;index as i" >
+          <a style="text-align: center;" *ngIf="promoList.length<=0">Promoção Nao Encontrada!</a>
+          <br>
+          <li *ngFor="let promo of promoList;index as i" class="promo">
             <a  type="button"
             data-bs-toggle="collapse"
             attr.data-bs-target="#promo-{{i}}"

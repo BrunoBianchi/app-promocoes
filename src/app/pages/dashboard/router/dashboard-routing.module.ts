@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EstatisticasComponent } from '../estatisticas/estatisticas.component';
 import { PromocoesComponent } from '../promocoes/promocoes.component';
-import { DashboardComponent } from '../dashboard/dashboard.component';
+import { UsersComponent } from '../users/users.component';
 
 
 const routes: Routes = [
-{path: '',component:DashboardComponent, pathMatch: 'full'},
+{path: '',redirectTo:'promocoes', pathMatch: 'full'},
 {path:'estatisticas',component:EstatisticasComponent},
-{path:'promocoes',component:PromocoesComponent}
+{path:'promocoes',component:PromocoesComponent},
+{path:'users',component:UsersComponent}
 ];
 
 @NgModule({
